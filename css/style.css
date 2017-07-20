@@ -1,0 +1,129 @@
+body{
+    font-family: "Microsoft YaHei";
+}
+body,h1,h2,h3,p{
+	margin:0;
+	padding:0;
+}
+a {
+    text-decoration: none;
+}
+ul li{
+    list-style-type: none;
+}
+#ceshi{
+    width: 100px;
+    height: 200px;
+
+}
+.body{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #0fbcce;
+    z-index: 1;
+}
+.body .bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/di.png') no-repeat;
+    background-size: contain;
+    z-index: 5;
+}
+.body #file{
+    position: absolute;
+    z-index: 10;
+
+}
+.body #view {
+    position: absolute;
+    margin: 68% 0 0 0;
+    width: 92%;
+    height: 33%;
+    z-index: -3;
+    left: 4%;
+
+}
+.body .foot{
+    position: absolute;
+    top: 80%;
+    width: 64%;
+    height: 13%;
+    z-index: 6;
+    left: 50%;
+    margin-left: -32%;
+
+}
+.body .foot img{
+    width: 40%;
+    cursor: pointer;
+
+}
+.body .foot img.sheng{
+    float: right;
+}
+.myClip{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #666;
+    /*display:none;*/
+    z-index: -1;
+
+
+}
+.myClip.active{
+    z-index: 2;
+}
+.myClip #clipArea{
+
+    height: 80%;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+}
+
+footer{
+    position: absolute;
+    height: 20%;
+    width: 100%;
+
+}
+footer #clipBtn{
+    position: absolute;
+    height: 40%;
+    width: 50%;
+    top: 10%;
+    left: 50%;
+    margin-left: -25%;
+    font-size: 1.6em
+
+}
+/*header{
+    width: 100%;
+    height: 30%;
+}
+
+header .head{
+    width: 100%;
+    height: 100%;
+    background: #666;
+
+}
+.container{
+    width: 100%;
+    height: 70%;
+}
+.container .inner{
+    width: 100%;
+    height: 100%;
+
+}
+.container .show{
+    width: 50%;
+    height: 20%;
+    background: #666;
+    position: absolute;
+    margin: 100px 0;
+}*/

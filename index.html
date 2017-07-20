@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>h5活动页</title>
+    <link rel="stylesheet" href=" css/style.css">
+    <script type="text/javascript" src=" js/jquery-2.1.1.min.js"></script>
+
+    <script src=" js/iscroll-zoom.js"></script>
+    <script src=" js/hammer.js"></script>
+    <script src=" js/jquery.photoClip.js"></script>
+<!--     <script src="__PUBLIC__/plupload-2.1.2/js/plupload.full.min.js"></script>
+    <script src="__PUBLIC__/qiniu.js"></script> -->
+    <script type="text/javascript" src=" js/activity.js"></script>
+</head>
+
+<body>
+    <div id="ceshi">
+
+    </div>
+    <div class="body">
+        <!-- <header>
+            <div class="head">
+                <img src="" alt="">
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="inner">
+                <div class="show">
+                    <div id="show">
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="bg"></div>
+        <input type="file"  id="file">
+
+        <img id="thumbnail_img" src="" style='width:200px;' class='<empty name="vo.pic">hide</empty>'>
+        <span id="thumbnail_percent"></span>
+        <input type="hidden" name="pic" value="{$vo.pic}">
+
+        <div id="view"></div>
+        <div class="foot">
+            <img src=" images/shang.png" alt="" class="shang">
+            <img src=" images/sheng.png" alt="" class="sheng">
+        </div>
+    </div>
+    <div>
+        <div class="myClip">
+            <div id="clipArea"></div>
+
+            <footer>
+                <button id="clipBtn">截取</button>
+
+            </footer>
+        </div>
+
+    </div>
+    <script>
+    //document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+    var option = {
+        button : 'file',
+        ext : 'jpg,gif,png,jpeg',
+        multi : false,
+        token : '__APP__/Board/Qiniu/getActivityImageUploadToken',
+        progress : function(up,files){
+            // $('#thumbnail_percent').html( files.percent + '%' );
+        },
+        success : function(up,files,info){
+            var info = $.parseJSON(info);
+            console.log(info.key);
+
+            // $('#thumbnail_img').attr('src',"{$base_url}" + info.key);
+            // $('#thumbnail_percent').html('');
+            // $('#thumbnail_img').removeClass('hide');
+            // $("input[name='pic']").val(info.key);
+        }
+    };
+
+
+
+
+    $("#clipArea").photoClip({
+        width: 576,
+        height: 373,
+        file: "#file",
+        view: "#view",
+        ok: "#clipBtn",
+        loadStart: function() {
+            console.log("照片读取中");
+        },
+        loadComplete: function() {
+            console.log("照片读取完成");
+        },
+        clipFinish: function(dataURL) {
+
+            var picBase = dataURL.substring(23);
+            putb64(picBase)
+
+        }
+    });
+    </script>
+</body>
+
+</html>
